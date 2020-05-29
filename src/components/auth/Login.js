@@ -7,11 +7,11 @@ const Login = (props) => {
         <h1>Log In</h1>
         <form>
           <fieldset>
-            <label for="username">username</label>
+            <label htmlFor="username">username</label>
             <input name="username" type="text" />
           </fieldset>
           <fieldset>
-            <label for="password">password</label>
+            <label htmlFor="password">password</label>
             <input name="password" type="password" />
           </fieldset>
         </form>
