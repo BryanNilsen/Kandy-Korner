@@ -1,0 +1,120 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@kandy.com",
+      "password": "admin",
+      "firstName": "Sage",
+      "lastName": "Houchens",
+      "address": "404 Lost Way, Nashville, TN",
+      "phone": "657-2355",
+      "locationId": 1,
+      "isSupervisor": true
+    },
+    {
+      "id": 2,
+      "username": "galfieri",
+      "email": "rose@kandy.com",
+      "password": "galfieri",
+      "firstName": "Rose",
+      "lastName": "Fieri",
+      "address": "500 Internal Drive, Nashville, TN",
+      "phone": "627-1435",
+      "locationId": 2,
+      "isSupervisor": false
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Kandy Korner Kidz",
+      "address": "202 Success Circle, Nashville, TN",
+      "phone": "154-7622"
+    },
+    {
+      "id": 2,
+      "name": "Kandy Korner",
+      "address": "418 Teapot Way, Nashville, TN",
+      "phone": "154-7624"
+    },
+    {
+      "id": 3,
+      "name": "Kandy Korner West Side",
+      "address": "304 Unchanged Drive, Nashville, TN",
+      "phone": "154-7626"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Pink Gummy Bears",
+      "price": "3.99",
+      "productTypeId": 2
+    },
+    {
+      "id": 2,
+      "name": "Houchen's Favorite Licorice",
+      "price": "60.95",
+      "productTypeId": 4
+    },
+    {
+      "id": 3,
+      "name": "Ghost Pepper Chocolate Bar",
+      "price": "4.07",
+      "productTypeId": 1
+    },
+    {
+      "id": 4,
+      "name": "World's Softest Jawbreaker",
+      "price": "20.99",
+      "productTypeId": 3
+    },
+    {
+      "id": 5,
+      "name": "World's Shortest Lasting Gum",
+      "price": "99.99",
+      "productTypeId": 5
+    },
+    {
+      "id": 6,
+      "name": "Jolly Developer",
+      "price": "65,000.00",
+      "productTypeId": 3
+    },
+    {
+      "id": 7,
+      "name": "Candy Broccoli",
+      "price": "2.99",
+      "productTypeId": 3
+    },
+    {
+      "id": 8,
+      "name": "Chocolate Tux",
+      "price": "3.89",
+      "productTypeId": 1
+    }
+  ],
+  "productTypes": [
+    {
+      "id": 1,
+      "name": "Chocolate"
+    },
+    {
+      "id": 2,
+      "name": "Gummy"
+    },
+    {
+      "id": 3,
+      "name": "Hard Candy"
+    },
+    {
+      "id": 4,
+      "name": "Licorice"
+    },
+    {
+      "id": 5,
+      "name": "Gum"
+    }
+  ]
+}
