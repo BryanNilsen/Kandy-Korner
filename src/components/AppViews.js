@@ -2,8 +2,12 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+import Products from "./products/Products";
+
 const AppViews = (props) => {
   const setIsAuthenticated = props.setIsAuthenticated;
+  const isAuthenticated = props.isAuthenticated;
+
   return (
     <React.Fragment>
       <Route
@@ -20,6 +24,19 @@ const AppViews = (props) => {
           );
         }}
       />
+
+      <>
+        <Route
+          path="/products"
+          render={(props) =>
+            isAuthenticated ? (
+              <Products {...props} />
+            ) : (
+              props.history.push("/login")
+            )
+          }
+        />
+      </>
     </React.Fragment>
   );
 };
