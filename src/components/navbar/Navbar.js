@@ -9,28 +9,49 @@ const Navbar = (props) => {
         <div>
           {!props.isAuthenticated && (
             <>
-              <NavLink to="/login" className="navlink">
+              <NavLink
+                to="/login"
+                className="navlink"
+                activeClassName="activeLink"
+              >
                 LOGIN
               </NavLink>
-              <NavLink to="/register" className="navlink">
+              <NavLink
+                to="/register"
+                className="navlink"
+                activeClassName="activeLink"
+              >
                 REGISTER
               </NavLink>
             </>
           )}
           {props.isAuthenticated && (
             <>
-              <NavLink to="/products" className="navlink">
+              <NavLink
+                to="/products"
+                className="navlink"
+                activeClassName="activeLink"
+              >
                 PRODUCTS
               </NavLink>
-              <NavLink to="/employees" className="navlink">
+              <NavLink
+                to="/employees"
+                className="navlink"
+                activeClassName="activeLink"
+              >
                 EMPLOYEES
               </NavLink>
-              <NavLink to="/locations" className="navlink">
+              <NavLink
+                to="/locations"
+                className="navlink"
+                activeClassName="activeLink"
+              >
                 LOCATIONS
               </NavLink>
               <NavLink
                 to="/home"
                 className="navlink logout"
+                activeClassName="activeLink"
                 onClick={() => props.setIsAuthenticated(false)}
               >
                 LOGOUT

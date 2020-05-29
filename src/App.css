@@ -5,9 +5,9 @@
 nav {
   background-color: #452d2d;
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: flex-end;
+  padding: 0 2rem;
 }
 
 .logo {
@@ -35,6 +35,11 @@ nav {
   right: 0;
 }
 
+a.activeLink {
+  background-color: #f799ae;
+  color: #452d2d;
+}
+
 .logout {
   background-color: #1f1a1a;
 }
@@ -47,4 +52,12 @@ nav {
 .nav-colorband {
   background-color: #f799ae;
   padding: 1rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.center {
+  text-align: center;
 }

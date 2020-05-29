@@ -3,15 +3,27 @@ import React from "react";
 const Login = (props) => {
   return (
     <>
-      <div>This is the Login component</div>
-      <button
-        onClick={() => {
-          props.setIsAuthenticated(true);
-          props.history.push("/products");
-        }}
-      >
-        Log In
-      </button>
+      <div className="center">
+        <h1>Log In</h1>
+        <form>
+          <fieldset>
+            <label for="username">username</label>
+            <input name="username" type="text" />
+          </fieldset>
+          <fieldset>
+            <label for="password">password</label>
+            <input name="password" type="password" />
+          </fieldset>
+        </form>
+        <button
+          onClick={() => {
+            props.setIsAuthenticated(true);
+            props.history.push("/products");
+          }}
+        >
+          Log In
+        </button>
+      </div>
     </>
   );
 };
