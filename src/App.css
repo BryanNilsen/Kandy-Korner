@@ -6,7 +6,7 @@ nav {
   background-color: #452d2d;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-end;
 }
 
@@ -33,6 +33,10 @@ nav {
   position: relative;
   bottom: 0.5rem;
   right: 0;
+}
+
+.logout {
+  background-color: #1f1a1a;
 }
 
 .navlink:hover {
