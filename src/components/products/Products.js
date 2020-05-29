@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIManager from "../../modules/APIManager";
+import ProductCard from "./ProductCard";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -10,8 +11,14 @@ function Products() {
 
   return (
     <>
-      <h1>Products</h1>
-      <p>map over products here</p>
+      <header>
+        <h1>Products</h1>
+      </header>
+      <div className="card_container horz">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </>
   );
 }

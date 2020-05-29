@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Products from "./products/Products";
+import Employees from "./employees/Employees";
 
 const AppViews = (props) => {
   const setIsAuthenticated = props.setIsAuthenticated;
@@ -25,18 +26,26 @@ const AppViews = (props) => {
         }}
       />
 
-      <>
-        <Route
-          path="/products"
-          render={(props) =>
-            isAuthenticated ? (
-              <Products {...props} />
-            ) : (
-              props.history.push("/login")
-            )
-          }
-        />
-      </>
+      <Route
+        path="/products"
+        render={(props) =>
+          isAuthenticated ? (
+            <Products {...props} />
+          ) : (
+            props.history.push("/login")
+          )
+        }
+      />
+      <Route
+        path="/employees"
+        render={(props) =>
+          isAuthenticated ? (
+            <Employees {...props} />
+          ) : (
+            props.history.push("/login")
+          )
+        }
+      />
     </React.Fragment>
   );
 };

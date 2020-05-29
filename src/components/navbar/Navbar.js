@@ -49,7 +49,7 @@ const Navbar = (props) => {
                 LOCATIONS
               </NavLink>
               <NavLink
-                to="/home"
+                to="/login"
                 className="navlink logout"
                 activeClassName="activeLink"
                 onClick={() => props.setIsAuthenticated(false)}

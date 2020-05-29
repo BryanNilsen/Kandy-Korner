@@ -9,6 +9,9 @@ nav {
   align-items: flex-end;
   padding: 0 2rem;
 }
+header {
+  padding: 1em;
+}
 
 .logo {
   font-family: fantasy;
@@ -60,4 +63,37 @@ fieldset {
 
 .center {
   text-align: center;
+}
+
+.card_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  display: flex;
+  background-color: #e8e8e8;
+  padding: 1em;
+  border-radius: 0.5em;
+  flex: 0 0 20%;
+  margin: 1em;
+  min-width: 125px;
+}
+
+.horz {
+  flex-flow: row wrap;
+}
+
+.vert {
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.img_container {
+  padding: 10px;
+  background-color: white;
+}
+.card img {
+  max-width: 300px;
+  min-width: 75px;
+  width: 100%;
 }
