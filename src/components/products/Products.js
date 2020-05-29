@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import APIManager from "../../modules/APIManager";
 
 function Products() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    APIManager.getResource("products").then((result) => setProducts(result));
+  }, []);
 
   return (
     <>

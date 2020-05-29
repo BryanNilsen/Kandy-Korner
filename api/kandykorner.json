@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@admin.com",
+      "password": "admin"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "userId": 1,
+      "firstName": "Ad",
+      "lastName": "Min",
+      "address": "123 Candy Cane Lane, Nashville, TN",
+      "phone": "615-321-7654",
+      "locationId": 1
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Downtown",
+      "address": "321 Broadway",
+      "phone": "615-123-0987"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "gummy worms",
+      "price": 1.29,
+      "productTypeId": 1
+    }
+  ],
+  "productTypes": [
+    {
+      "id": 1,
+      "name": "gummies"
+    },
+    {
+      "id": 2,
+      "name": "lollipops"
+    },
+    {
+      "id": 3,
+      "name": "gum"
+    },
+    {
+      "id": 4,
+      "name": "candy bars"
+    }
+  ]
+}
