@@ -23,6 +23,18 @@
       "phone": "627-1435",
       "locationId": 2,
       "isSupervisor": false
+    },
+    {
+      "id": 3,
+      "username": "galfieri 2",
+      "email": "rose@kandy.com",
+      "password": "galfieri",
+      "firstName": "Rose Impostor",
+      "lastName": "Fieri",
+      "address": "500 Internal Drive, Nashville, TN",
+      "phone": "627-1435",
+      "locationId": 2,
+      "isSupervisor": false
     }
   ],
   "locations": [

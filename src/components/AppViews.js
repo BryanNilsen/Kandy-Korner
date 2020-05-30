@@ -4,10 +4,13 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Products from "./products/Products";
 import Employees from "./employees/Employees";
+import EmployeeDetail from "./employees/EmployeeDetail";
+import Locations from "./locations/Locations";
 
 const AppViews = (props) => {
   const setIsAuthenticated = props.setIsAuthenticated;
   const isAuthenticated = props.isAuthenticated;
+  const userIsSupervisor = props.userIsSupervisor;
 
   return (
     <React.Fragment>
@@ -37,10 +40,36 @@ const AppViews = (props) => {
         }
       />
       <Route
+        exact
         path="/employees"
         render={(props) =>
           isAuthenticated ? (
             <Employees {...props} />
+          ) : (
+            props.history.push("/login")
+          )
+        }
+      />
+      <Route
+        path="/employees/:employeeId(\d+)"
+        render={(props) =>
+          isAuthenticated ? (
+            <EmployeeDetail
+              userIsSupervisor={userIsSupervisor}
+              employeeId={parseInt(props.match.params.employeeId)}
+              {...props}
+            />
+          ) : (
+            props.history.push("/login")
+          )
+        }
+      />
+      <Route
+        exact
+        path="/locations"
+        render={(props) =>
+          isAuthenticated ? (
+            <Locations {...props} />
           ) : (
             props.history.push("/login")
           )

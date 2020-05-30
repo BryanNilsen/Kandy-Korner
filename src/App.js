@@ -1,10 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import AppViews from "./components/AppViews";
+import APIManager from "./modules/APIManager";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const checkisAuthenticated = () => sessionStorage.getItem("userId") !== null;
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    checkisAuthenticated()
+  );
+
+  const [user, setUser] = useState({
+    id: 0,
+    username: "",
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    phone: "",
+    locationId: 0,
+    isSupervisor: false,
+  });
+
+  const getUserData = () => {
+    const userId = sessionStorage.getItem("userId");
+    console.log(userId);
+    if (!userId) {
+      return;
+    }
+    return APIManager.getResourceById("employees", userId).then((user) => {
+      setUser(user);
+      return user;
+    });
+  };
+
+  const clearUserData = () => {
+    setUser({
+      id: 0,
+      username: "",
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      address: "",
+      phone: "",
+      locationId: 0,
+      isSupervisor: false,
+    });
+  };
+
+  useEffect(() => {
+    checkisAuthenticated();
+  }, []);
+
+  useEffect(() => {
+    getUserData();
+  }, [isAuthenticated]);
 
   return (
     <>
@@ -15,6 +67,7 @@ function App() {
       <AppViews
         isAuthenticated={isAuthenticated}
         setIsAuthenticated={setIsAuthenticated}
+        userIsSupervisor={user.isSupervisor}
       />
     </>
   );

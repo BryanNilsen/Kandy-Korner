@@ -17,6 +17,7 @@ const Login = (props) => {
         </form>
         <button
           onClick={() => {
+            sessionStorage.setItem("userId", 1);
             props.setIsAuthenticated(true);
             props.history.push("/products");
           }}
