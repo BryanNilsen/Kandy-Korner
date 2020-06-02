@@ -17,6 +17,11 @@ const APIManager = {
       method: "DELETE",
     }).then((res) => res.json());
   },
+  findUserByUsernameAndPassword(username, password) {
+    return fetch(
+      `${url}employees?username=${username}&password=${password}`
+    ).then((res) => res.json());
+  },
 };
 
 export default APIManager;

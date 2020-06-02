@@ -8,6 +8,7 @@ function ProductCard(props) {
         <img src={`/images/products/${product.id}.jpg`} alt={product.name} />
       </div>
       <h2>{product.name}</h2>
+      <h2>${product.price} per lb.</h2>
       <button>details</button>
     </div>
   );

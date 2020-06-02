@@ -23,18 +23,6 @@ function App() {
     isSupervisor: false,
   });
 
-  const getUserData = () => {
-    const userId = sessionStorage.getItem("userId");
-    console.log(userId);
-    if (!userId) {
-      return;
-    }
-    return APIManager.getResourceById("employees", userId).then((user) => {
-      setUser(user);
-      return user;
-    });
-  };
-
   const clearUserData = () => {
     setUser({
       id: 0,
@@ -55,6 +43,18 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const getUserData = () => {
+      const userId = sessionStorage.getItem("userId");
+      console.log(userId);
+      if (!userId) {
+        clearUserData();
+        return;
+      }
+      return APIManager.getResourceById("employees", userId).then((user) => {
+        setUser(user);
+        return user;
+      });
+    };
     getUserData();
   }, [isAuthenticated]);
 
