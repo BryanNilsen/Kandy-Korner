@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import APIManager from "../../modules/APIManager";
 
 const Login = (props) => {
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleInput = (evt) => {
+    const credentialsToChange = { ...credentials };
+    credentialsToChange[evt.target.id] = evt.target.value;
+    setCredentials(credentialsToChange);
+  };
+
+  const handleLogin = () => {
+    const user = credentials.username;
+    const pass = credentials.password;
+    if (user === "" || pass === "") {
+      alert("Please complete both login fields");
+    } else {
+      APIManager.findUserByUsernameAndPassword(user, pass).then((res) => {
+        if (res.length > 0) {
+          sessionStorage.setItem("userId", res[0].id);
+          props.setIsAuthenticated(true);
+          props.history.push("/products");
+        } else {
+          alert("There was a problem logging in. Please try again");
+        }
+      });
+    }
+  };
+
   return (
     <>
       <div className="center">
@@ -8,21 +38,24 @@ const Login = (props) => {
         <form>
           <fieldset>
             <label htmlFor="username">username</label>
-            <input name="username" type="text" />
+            <input
+              id="username"
+              name="username"
+              type="text"
+              onChange={handleInput}
+            />
           </fieldset>
           <fieldset>
             <label htmlFor="password">password</label>
-            <input name="password" type="password" />
+            <input
+              id="password"
+              name="password"
+              type="password"
+              onChange={handleInput}
+            />
           </fieldset>
         </form>
-        <button
-          onClick={() => {
-            props.setIsAuthenticated(true);
-            props.history.push("/products");
-          }}
-        >
-          Log In
-        </button>
+        <button onClick={handleLogin}>Log In</button>
       </div>
     </>
   );

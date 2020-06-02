@@ -1,9 +1,19 @@
+:root {
+  --primary-brown: #452d2d;
+  --primary-white: #ffffff;
+  --primary-pink: #f799ae;
+}
+
 .App {
   text-align: center;
 }
 
+body {
+  background-color: antiquewhite;
+}
+
 nav {
-  background-color: #452d2d;
+  background-color: var(--primary-brown);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -14,7 +24,7 @@ header {
 }
 
 .logo {
-  font-family: fantasy;
+  font-family: "Berkshire Swash", cursive;
   font-weight: bold;
   padding: 0.5rem;
   color: white;
@@ -39,7 +49,7 @@ header {
 }
 
 a.activeLink {
-  background-color: #f799ae;
+  background-color: var(--primary-pink);
   color: #452d2d;
 }
 
@@ -48,13 +58,13 @@ a.activeLink {
 }
 
 .navlink:hover {
-  background-color: #f799ae;
+  background-color: var(--primary-pink);
   color: #452d2d;
 }
 
 .nav-colorband {
-  background-color: #f799ae;
-  padding: 1rem;
+  background-color: var(--primary-pink);
+  padding: 0.5rem;
 }
 
 fieldset {
@@ -71,12 +81,13 @@ fieldset {
 }
 .card {
   display: flex;
-  background-color: #e8e8e8;
+  background-color: white;
   padding: 1em;
   border-radius: 0.5em;
   flex: 0 0 20%;
   margin: 1em;
-  min-width: 125px;
+  min-width: 175px;
+  max-width: 350px;
 }
 
 .horz {
@@ -96,4 +107,12 @@ fieldset {
   max-width: 300px;
   min-width: 75px;
   width: 100%;
+}
+
+button {
+  border-style: none;
+  background-color: var(--primary-pink);
+  color: var(--primary-white);
+  font-size: 1rem;
+  font-weight: bold;
 }

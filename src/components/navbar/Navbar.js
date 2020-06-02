@@ -2,6 +2,11 @@ import React from "react";
 import { withRouter, NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
+  const handleLogout = () => {
+    sessionStorage.clear();
+    props.setIsAuthenticated(false);
+  };
+
   return (
     <>
       <nav>
@@ -52,7 +57,7 @@ const Navbar = (props) => {
                 to="/login"
                 className="navlink logout"
                 activeClassName="activeLink"
-                onClick={() => props.setIsAuthenticated(false)}
+                onClick={handleLogout}
               >
                 LOGOUT
               </NavLink>

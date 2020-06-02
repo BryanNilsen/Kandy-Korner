@@ -13,7 +13,9 @@ function EmployeeCard(props) {
       <h2>
         {employee.firstName} {employee.lastName}
       </h2>
-      <button>details</button>
+      <button onClick={() => props.history.push(`/employees/${employee.id}`)}>
+        details
+      </button>
     </div>
   );
 }
