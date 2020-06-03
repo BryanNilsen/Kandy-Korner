@@ -5,11 +5,13 @@ function ProductCard(props) {
   return (
     <div className="card vert">
       <div className="img_container">
-        <img src={`/images/products/${product.id}.jpg`} alt={product.name} />
+        <img src={`/images/products/${product.img}`} alt={product.name} />
       </div>
       <h2>{product.name}</h2>
       <h2>${product.price} per lb.</h2>
-      <button>details</button>
+      <button onClick={() => props.history.push(`/products/${product.id}`)}>
+        details
+      </button>
     </div>
   );
 }

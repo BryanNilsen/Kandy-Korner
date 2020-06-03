@@ -6,7 +6,7 @@ function EmployeeCard(props) {
     <div className="card vert">
       <div>
         <img
-          src={`/images/employees/${employee.id}.png`}
+          src={`/images/employees/${employee.img}`}
           alt={`${employee.firstName} ${employee.lastName}`}
         />
       </div>

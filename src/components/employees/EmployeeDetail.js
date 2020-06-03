@@ -32,14 +32,16 @@ function EmployeeDetail(props) {
     <div className="card vert">
       <div>
         <img
-          src={`/images/employees/${employee.id}.png`}
+          src={`/images/employees/${employee.img}`}
           alt={`${employee.firstName} ${employee.lastName}`}
         />
       </div>
       <h2>
         {employee.firstName} {employee.lastName}
       </h2>
-      <h3>Location: {employee.location.name}</h3>
+      <h3>Address: {employee.address}</h3>
+      <h3>Phone: {employee.phone}</h3>
+      <h3>Works at: {employee.location.name}</h3>
       {props.userIsSupervisor && (
         <button onClick={deleteEmployee}>terminate employment</button>
       )}

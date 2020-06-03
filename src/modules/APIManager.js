@@ -22,6 +22,32 @@ const APIManager = {
       `${url}employees?username=${username}&password=${password}`
     ).then((res) => res.json());
   },
+  findUserByEmail(email) {
+    return fetch(`${url}employees?email=${email}`).then((res) => res.json());
+  },
+  getProductLocations(productId) {
+    return fetch(
+      `${url}productLocations?productId=${productId}&_expand=location`
+    ).then((res) => res.json());
+  },
+  postResource(resource, newItem) {
+    return fetch(`${url}${resource}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    }).then((data) => data.json());
+  },
+  updateResource(resource, newItem) {
+    return fetch(`${url}${resource}/${newItem.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    }).then((data) => data.json());
+  },
 };
 
 export default APIManager;

@@ -10,7 +10,8 @@
       "address": "404 Lost Way, Nashville, TN",
       "phone": "657-2355",
       "locationId": 1,
-      "isSupervisor": true
+      "isSupervisor": true,
+      "img": "1.png"
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "address": "500 Internal Drive, Nashville, TN",
       "phone": "627-1435",
       "locationId": 2,
-      "isSupervisor": false
+      "isSupervisor": false,
+      "img": "2.png"
     },
     {
       "id": 3,
@@ -34,7 +36,21 @@
       "address": "500 Internal Drive, Nashville, TN",
       "phone": "627-1435",
       "locationId": 2,
-      "isSupervisor": false
+      "isSupervisor": false,
+      "img": "3.png"
+    },
+    {
+      "username": "bryan",
+      "password": "bryan",
+      "email": "bryan@kandy.com",
+      "firstName": "Bryan",
+      "lastName": "Kandy",
+      "address": "123 Lollipop Way",
+      "phone": "1234567",
+      "locationId": "2",
+      "isSupervisor": false,
+      "id": 4,
+      "img": "0.png"
     }
   ],
   "locations": [
@@ -62,49 +78,57 @@
       "id": 1,
       "name": "Pink Gummy Bears",
       "price": "3.99",
-      "productTypeId": 2
+      "productTypeId": "2",
+      "img": "1.jpg"
     },
     {
       "id": 2,
       "name": "Houchen's Favorite Licorice",
       "price": "60.95",
-      "productTypeId": 4
+      "productTypeId": 4,
+      "img": "2.jpg"
     },
     {
       "id": 3,
       "name": "Ghost Pepper Chocolate Bar",
       "price": "4.07",
-      "productTypeId": 1
+      "productTypeId": 1,
+      "img": "3.jpg"
     },
     {
       "id": 4,
       "name": "World's Softest Jawbreaker",
       "price": "20.99",
-      "productTypeId": 3
+      "productTypeId": 3,
+      "img": "4.jpg"
     },
     {
       "id": 5,
       "name": "World's Shortest Lasting Gum",
       "price": "99.99",
-      "productTypeId": 5
+      "productTypeId": 5,
+      "img": "5.jpg"
     },
     {
       "id": 6,
       "name": "Jolly Developer",
       "price": "65,000.00",
-      "productTypeId": 3
+      "productTypeId": 3,
+      "img": "6.jpg"
     },
     {
       "id": 7,
       "name": "Candy Broccoli",
       "price": "2.99",
-      "productTypeId": 3
+      "productTypeId": 3,
+      "img": "7.jpg"
     },
     {
       "id": 8,
       "name": "Chocolate Tux",
       "price": "3.89",
-      "productTypeId": 1
+      "productTypeId": 1,
+      "img": "8.jpg"
     }
   ],
   "productTypes": [
@@ -127,6 +151,88 @@
     {
       "id": 5,
       "name": "Gum"
+    }
+  ],
+  "productLocations": [
+    {
+      "id": 1,
+      "productId": 1,
+      "locationId": 2
+    },
+    {
+      "id": 2,
+      "productId": 1,
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "productId": 2,
+      "locationId": 3
+    },
+    {
+      "id": 4,
+      "productId": 2,
+      "locationId": 1
+    },
+    {
+      "id": 5,
+      "productId": 3,
+      "locationId": 3
+    },
+    {
+      "id": 6,
+      "productId": 3,
+      "locationId": 2
+    },
+    {
+      "id": 7,
+      "productId": 4,
+      "locationId": 1
+    },
+    {
+      "id": 8,
+      "productId": 4,
+      "locationId": 2
+    },
+    {
+      "id": 9,
+      "productId": 4,
+      "locationId": 3
+    },
+    {
+      "id": 10,
+      "productId": 5,
+      "locationId": 1
+    },
+    {
+      "id": 11,
+      "productId": 6,
+      "locationId": 2
+    },
+    {
+      "id": 12,
+      "productId": 6,
+      "locationId": 3
+    },
+    {
+      "id": 13,
+      "productId": 7,
+      "locationId": 1
+    },
+    {
+      "id": 14,
+      "productId": 8,
+      "locationId": 3
+    },
+    {
+      "id": 15,
+      "productId": 8,
+      "locationId": 2
+    },
+    {
+      "id": 16,
+      "productId": 8,
+      "locationId": 1
     }
   ]
 }

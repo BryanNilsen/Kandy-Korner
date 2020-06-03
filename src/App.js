@@ -45,7 +45,6 @@ function App() {
   useEffect(() => {
     const getUserData = () => {
       const userId = sessionStorage.getItem("userId");
-      console.log(userId);
       if (!userId) {
         clearUserData();
         return;
