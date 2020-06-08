@@ -38,19 +38,6 @@
       "locationId": 2,
       "isSupervisor": false,
       "img": "3.png"
-    },
-    {
-      "username": "bryan",
-      "password": "bryan",
-      "email": "bryan@kandy.com",
-      "firstName": "Bryan",
-      "lastName": "Kandy",
-      "address": "123 Lollipop Way",
-      "phone": "1234567",
-      "locationId": "2",
-      "isSupervisor": false,
-      "id": 4,
-      "img": "0.png"
     }
   ],
   "locations": [
@@ -129,6 +116,13 @@
       "price": "3.89",
       "productTypeId": 1,
       "img": "8.jpg"
+    },
+    {
+      "name": "carmel",
+      "price": "3.18",
+      "productTypeId": "1",
+      "img": "0.png",
+      "id": 9
     }
   ],
   "productTypes": [

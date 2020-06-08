@@ -10,7 +10,7 @@ const ProductAddEdit = (props) => {
     name: "",
     price: "",
     productTypeId: 0,
-    img: "0.jpg",
+    img: "0.png",
   });
 
   const [productTypes, setProductTypes] = useState([]);
@@ -28,6 +28,7 @@ const ProductAddEdit = (props) => {
         name: product.name,
         price: product.price,
         productTypeId: product.productTypeId,
+        img: product.img,
       };
       APIManager.postResource("products", newProduct).then((res) => {
         props.history.push("/products");
