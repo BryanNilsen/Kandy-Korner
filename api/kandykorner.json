@@ -65,7 +65,7 @@
       "id": 1,
       "name": "Pink Gummy Bears",
       "price": "3.99",
-      "productTypeId": "2",
+      "productTypeId": 2,
       "img": "1.jpg"
     },
     {
@@ -148,16 +148,6 @@
     }
   ],
   "productLocations": [
-    {
-      "id": 1,
-      "productId": 1,
-      "locationId": 2
-    },
-    {
-      "id": 2,
-      "productId": 1,
-      "locationId": 1
-    },
     {
       "id": 3,
       "productId": 2,
