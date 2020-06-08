@@ -2,6 +2,7 @@
   --primary-brown: #452d2d;
   --primary-white: #ffffff;
   --primary-pink: #f799ae;
+  --primary-gray: #b4b4b4;
 }
 
 .App {
@@ -111,8 +112,14 @@ fieldset {
 
 button {
   border-style: none;
-  background-color: var(--primary-pink);
+  background-color: #9d7172;
   color: var(--primary-white);
   font-size: 1rem;
   font-weight: bold;
+  margin-top: 0.5em;
+  padding: 0.5em;
+}
+
+button:hover {
+  background-color: var(--primary-pink);
 }

@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Products from "./products/Products";
+import ProductDetail from "./products/ProductDetail";
+import ProductAddEdit from "./products/ProductAddEdit";
 import Employees from "./employees/Employees";
 import EmployeeDetail from "./employees/EmployeeDetail";
 import Locations from "./locations/Locations";
@@ -30,6 +32,7 @@ const AppViews = (props) => {
       />
 
       <Route
+        exact
         path="/products"
         render={(props) =>
           isAuthenticated ? (
@@ -65,11 +68,51 @@ const AppViews = (props) => {
         }
       />
       <Route
+        path="/products/:productId(\d+)"
+        render={(props) =>
+          isAuthenticated ? (
+            <ProductDetail
+              userIsSupervisor={userIsSupervisor}
+              productId={parseInt(props.match.params.productId)}
+              {...props}
+            />
+          ) : (
+            props.history.push("/login")
+          )
+        }
+      />
+      <Route
         exact
         path="/locations"
         render={(props) =>
           isAuthenticated ? (
             <Locations {...props} />
+          ) : (
+            props.history.push("/login")
+          )
+        }
+      />
+      <Route
+        exact
+        path="/products/add"
+        render={(props) =>
+          isAuthenticated ? (
+            <ProductAddEdit status={"add"} {...props} />
+          ) : (
+            props.history.push("/login")
+          )
+        }
+      />
+      <Route
+        exact
+        path="/products/edit/:productId(\d+)"
+        render={(props) =>
+          isAuthenticated ? (
+            <ProductAddEdit
+              status={"edit"}
+              productId={parseInt(props.match.params.productId)}
+              {...props}
+            />
           ) : (
             props.history.push("/login")
           )
