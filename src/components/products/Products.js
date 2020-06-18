@@ -5,14 +5,6 @@ import ProductCard from "./ProductCard";
 function Products(props) {
   const [products, setProducts] = useState([{ id: 0, locations: [] }]);
 
-  const mapProducts = (productsArray) => {
-    productsArray.map((result) =>
-      APIManager.getProductLocations(result.id).then((locs) => {
-        result.locations = locs.map((loc) => loc.location);
-        return result;
-      })
-    );
-  };
 
   useEffect(() => {
     // get all products
@@ -24,22 +16,22 @@ function Products(props) {
           APIManager.getProductLocations(result.id).then((locs) => {
             //
             // map over locations to get states - wrap with promise.all
-            // Promise.all(
-            //   locs.map((loc) =>
-            //     APIManager.getResourceById("states", loc.location.stateId).then(
-            //       (state) => {
-            //         loc.location.state = state.name;
-            //         return loc;
-            //       }
-            //     )
-            //   )
-            // )
-
-            result.locations = locs.map((loc) => loc.location);
-            return result;
+            return Promise.all(
+              locs.map((loc) =>
+                APIManager.getResourceById("states", loc.location.stateId).then(
+                  (state) => {
+                    loc.location.state = state.name;
+                    return loc;
+                  }
+                )
+              )
+            ).then(locays => {
+              result.locations = locays.map((loc) => loc.location);
+              return result;
+            })
           })
         )
-      ).then((prodsWithLocations) => setProducts(prodsWithLocations));
+      ).then((prodsWithLocationsAndStates) => setProducts(prodsWithLocationsAndStates));
     });
   }, []);
 
