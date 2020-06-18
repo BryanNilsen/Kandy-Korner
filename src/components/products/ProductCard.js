@@ -9,6 +9,11 @@ function ProductCard(props) {
       </div>
       <h2>{product.name}</h2>
       <h2>${product.price} per lb.</h2>
+      {product.locations.map((location) => (
+        <p key={location.id}>
+          {location.name} - {location.state}
+        </p>
+      ))}
       <button onClick={() => props.history.push(`/products/${product.id}`)}>
         details
       </button>

@@ -44,20 +44,33 @@
     {
       "id": 1,
       "name": "Kandy Korner Kidz",
-      "address": "202 Success Circle, Nashville, TN",
+      "address": "202 Success Circle, Nashville",
+      "stateId": 1,
       "phone": "154-7622"
     },
     {
       "id": 2,
       "name": "Kandy Korner",
-      "address": "418 Teapot Way, Nashville, TN",
+      "address": "418 Teapot Way, Nashville",
+      "stateId": 1,
       "phone": "154-7624"
     },
     {
       "id": 3,
       "name": "Kandy Korner West Side",
-      "address": "304 Unchanged Drive, Nashville, TN",
+      "address": "304 Unchanged Drive, New York",
+      "stateId": 2,
       "phone": "154-7626"
+    }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "name": "Tennessee"
+    },
+    {
+      "id": 2,
+      "name": "New York"
     }
   ],
   "products": [
